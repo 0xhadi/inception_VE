@@ -4,7 +4,7 @@ RUN     apt-get update && apt-get install -y php php7.3-fpm php7.3-mysql mariadb
 
 COPY    conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-COPY    ./tools/wp-config.php   /
+# COPY    ./tools/wp-config.php   /
 
 COPY    ./tools/wp.sh /
 
