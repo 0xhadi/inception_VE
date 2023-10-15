@@ -1,9 +1,8 @@
 #!/bin/bash
 
-DB_NAME="myDB"
-DB_PWD="123"
-DB_USER="mhadi"
 
+
+echo "here =====>  " $DB_USER $DB_PWD $DB_NAME
 service mysql start
 
 sleep 3
@@ -13,10 +12,6 @@ echo "GRANT ALL PRIVILEGES ON *.* TO '$DB_USER'@'%' ;" >> sql_script.sql
 
 echo "FLUSH PRIVILEGES;" >> sql_script.sql
 mysql  < sql_script.sql
-# service mysql stop
+service mysql stop
 
-# exec mysqld
-# mysql  < script.sql
-
-# kill $(cat /var/run/mysqld/mysqld.pid)
-
+exec mysqld

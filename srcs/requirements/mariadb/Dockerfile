@@ -7,11 +7,12 @@ COPY    ./tools/create_db.sh /
 
 COPY    ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY    ./tools/script.sql /
+# COPY    ./tools/script.sql /
 
 
-RUN     /create_db.sh
+RUN     chmod +x create_db.sh 
+# RUN     /create_db.sh
 
-CMD  ["mysqld"]
+CMD  ["sh", "create_db.sh"]
 
 
