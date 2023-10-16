@@ -1,11 +1,9 @@
 #!/bin/bash
 
-
-
-echo "here =====>  " $DB_USER $DB_PWD $DB_NAME
 service mysql start
 
 sleep 3
+
 echo "CREATE DATABASE IF NOT EXISTS $DB_NAME ;" > sql_script.sql
 echo "CREATE USER IF NOT EXISTS '$DB_USER'@'%' IDENTIFIED BY '$DB_PWD' ;" >> sql_script.sql
 echo "GRANT ALL PRIVILEGES ON *.* TO '$DB_USER'@'%' ;" >> sql_script.sql
